@@ -12,7 +12,7 @@
 sudo apt update
 
 # Installs any required modules for the ctf-helper.py script
-pip install -r requirements
+pip install -r requirements.txt
 
 # Nmap install
 if ! which nmap > /dev/null; then
