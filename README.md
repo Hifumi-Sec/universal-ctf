@@ -16,9 +16,10 @@ Universal CTF is a project I started to help improve CTF experiences for beginne
 ⠄⣰⡗⠹⣿⣄⠄⠄⠄⢀⣿⣿⣿⣿⣿⣿⠟⣅⣥⣿⣿⣿⣿⠿⠋⠄⠄⣾⡌⢠⣿⡿⠃
 ⠜⠋⢠⣷⢻⣿⣿⣶⣾⣿⣿⣿⣿⠿⣛⣥⣾⣿⠿⠟⠛⠉⠄⠄⠄⠄⣾⡌⢠⣿⡿⠃ 
 
-Universal CTF | v1.0.0
+Universal CTF | v1.0.2
 Creator: Hifumi Sec (https://github.com/Hifumi-Sec)
 Open-Source: https://github.com/Hifumi-Sec/universal-ctf
+Support The Dev: https://github.com/sponsors/Hifumi-Sec
 ```
 
 ## Example Syntax

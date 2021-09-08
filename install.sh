@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################################
-# Universal CTF | v1.0.0                                   #
+# Universal CTF | v1.0.2                                   #
 # Creator: Hifumi Sec (https://github.com/Hifumi-Sec)      #
 # Open-Source: https://github.com/Hifumi-Sec/universal-ctf #
 ############################################################
@@ -12,7 +12,7 @@
 sudo apt update
 
 # Installs any required modules for the ctf-helper.py script
-# pip install -r requirements
+pip install -r requirements
 
 # Nmap install
 if ! which nmap > /dev/null; then
