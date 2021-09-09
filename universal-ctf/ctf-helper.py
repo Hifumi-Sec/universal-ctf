@@ -4,7 +4,7 @@ import sys
 import random
 from tabulate import tabulate
 # Importing version number so I only have to update it once
-sys.path.insert(0, '../')
+sys.path.insert(0, '../config/')
 from __version__ import VERSION
 
 def color_scheme(r, g, b, text):
@@ -53,9 +53,10 @@ if universal_ctf == "1":
 
     # available commands for recon
     available_commands = [
-        [1, 'Nmap', 'Nmap ("Network Mapper") is a free and open source utility for network discovery.'], 
-        [2, 'Gobuster', 'Directory/File, DNS and VHost busting tool written in Go.'],
-        [3, 'Nikto', 'Nikto is an Open Source web server scanner which performs comprehensive tests against web servers.']
+        [1, 'Nmap', 'nmap -h'], 
+        [2, 'Gobuster', 'gobuster -h'],
+        [3, 'Nikto', 'nikto -H'],
+        [4, 'Sublist3r', 'python3 ../tools/Sublist3r/sublist3r.py -h']
     ]
 
     # Ip address for recon - may eventually add ports
@@ -67,7 +68,7 @@ if universal_ctf == "1":
     # Handles the Nmap command for scanning ports
     def nmapScanner():
         print(f"Default command: nmap -sC -sV {ip_address}")
-        shall_we_continue = input("Do You Want To Continue (y/n)? ")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
         if shall_we_continue == "y":
             os.system(f'nmap -sC -sV {ip_address}')
         elif shall_we_continue == "n":
@@ -76,7 +77,7 @@ if universal_ctf == "1":
         else:
             print("Closing...")
 
-            shall_we_continue_2 = input("Do You Want To Continue (y/n)? ")
+            shall_we_continue_2 = input("Do You Want To Continue (y/n): ")
             if shall_we_continue_2 == "y":
                 os.system(f'nmap {flags} {ip_address}')
             else:
@@ -85,14 +86,15 @@ if universal_ctf == "1":
     # Handles uri enumeration using Gobuster
     def gobusterScanner():
         print(f"Default command: gobuster dir -u {ip_address} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt")
-        shall_we_continue = input("Do You Want To Continue (y/n)? ")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
         if shall_we_continue == "y":
             os.system(f'gobuster dir -u {ip_address} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt')
         elif shall_we_continue == "n":
             flags = input("Which flags would you like to use (ex: -e): ")
+            # command_sec = input("What type of enumeration would you like to run (ex: dir): ")
             wordlist = input("Which wordlist would you like to use (ex: /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt): ")
             print(f'New command: gobuster dir -u {ip_address} {flags} -w {wordlist}')
-            shall_we_continue_2 = input("Do You Want To Continue (y/n)? ")
+            shall_we_continue_2 = input("Do You Want To Continue (y/n): ")
             if shall_we_continue_2 == "y":
                 os.system(f'gobuster dir -u {ip_address} {flags} -w {wordlist}')
             else:
@@ -101,19 +103,34 @@ if universal_ctf == "1":
     # Nikto scanner for web servers
     def niktoScanner():
         print(f"Default command: nikto -h {ip_address}")
-        shall_we_continue = input("Do You Want To Continue (y/n)? ")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
         if shall_we_continue == "y":
             os.system(f'nikto -h {ip_address}')
         elif shall_we_continue == "n":
             flags = input("Which flags would you like to use (ex: -id): ")
             print(f'New command: nikto -h {ip_address} {flags}')
-            shall_we_continue_2 = input("Do You Want To Continue (y/n)? ")
+            shall_we_continue_2 = input("Do You Want To Continue (y/n): ")
             if shall_we_continue_2 == "y":
                 os.system(f'nikto -h {ip_address} {flags}')
             else:
                 print("Closing...")
+    
+    # Sublist3r command - handles subdomain enumeration
+    def sublist3rEnum():
+        print(f"Default command: python3 ../tools/Sublist3r/sublist3r.py -d {ip_address} -e google")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
+        if shall_we_continue == "y":
+            os.system(f'python3 ../tools/Sublist3r/sublist3r.py -d {ip_address} -e google')
+        elif shall_we_continue == "n":
+            flags = input("Which flags would you like to use (ex: -d): ")
+            print(f'New command: python3 ../tools/Sublist3r/sublist3r.py -d {ip_address} {flags}')
+            shall_we_continue_2 = input("Do You Want To Continue (y/n): ")
+            if shall_we_continue_2 == "y":
+                os.system(f'python3 ../tools/Sublist3r/sublist3r.py -d {ip_address} {flags}')
+            else:
+                print("Closing...")
 
-    print (tabulate(available_commands, headers=["ID", "Command", "Description"]))
+    print (tabulate(available_commands, headers=["ID", "Command", "Learn More"]))
     options = input("\nPlease choose your command: ")
 
     if options == "1":
@@ -122,6 +139,8 @@ if universal_ctf == "1":
         gobusterScanner()
     elif options == "3":
         niktoScanner()
+    elif options == "4":
+        sublist3rEnum()
     else:
         print("Please choose a valid option (ex: 1)")
 
@@ -142,14 +161,14 @@ elif universal_ctf == "2":
     # msfconsole command - all this does for now is boot it up, options for flags are available
     def metasploitAttack():
         print(f"Default command: msfconsole")
-        shall_we_continue = input("Do You Want To Continue (y/n)? ")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
         if shall_we_continue == "y":
             os.system(f'msfconsole')
         elif shall_we_continue == "n":
             flags = input("Which flags would you like to use (ex: -q): ")
             print(f'New command: msfconsole {flags}')
             
-            shall_we_continue_2 = input("Do You Want To Continue (y/n)? ")
+            shall_we_continue_2 = input("Do You Want To Continue (y/n): ")
             if shall_we_continue_2 == "y":
                 os.system(f'msfconsole {flags}')
             else:
@@ -157,7 +176,7 @@ elif universal_ctf == "2":
         
     def sqlMapAttack():
         print(f"Default command: sqlmap -u {ip_address}")
-        shall_we_continue = input("Do You Want To Continue (y/n)? ")
+        shall_we_continue = input("Do You Want To Continue (y/n): ")
         if shall_we_continue == "y":
             os.system(f'sqlmap -u {ip_address}')
         elif shall_we_continue == "n":
