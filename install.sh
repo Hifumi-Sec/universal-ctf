@@ -32,7 +32,7 @@ if ! which msfconsole > /dev/null; then
     read user_reply
     if "$user_reply" = "y"; then
         # Depending on how your system is set up (and user permissions), you may have to add sudo in appropiate places (If you get a connection error, then you need PostgreSQL installed)
-        metasploit_install = "mkdir msf_framework && cd msf_framework && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && sudo chmod 755 msfinstall && ./msfinstall && msfconsole --version"
+        metasploit_install = "cd tools && curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && sudo chmod 755 msfinstall && ./msfinstall && msfconsole --version"
         echo $metasploit_install
     fi
 else
