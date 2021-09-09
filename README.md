@@ -1,8 +1,8 @@
 # Universal CTF
 
 ### 📥 <a href="#installation">Installation</a> | 📚 <a href="#installation">Documentation</a> (Coming Soon)
-<br>
-🚩 Welcome to a simpler way of getting started with CTFs!
+
+## 🚩 Welcome to a simpler way of getting started with CTFs!
 
 Universal CTF is a project I started to help improve CTF experiences for beginners and speed up gathering results for veterans. Thanks to Universal CTF, you will no longer have to type out long commands over and over again, now you have a beautiful terminal based program to handle it all for you!
 
