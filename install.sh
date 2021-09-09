@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################################
-# Universal CTF | v1.0.2                                   #
+# Universal CTF | v1.0.4                                   #
 # Creator: Hifumi Sec (https://github.com/Hifumi-Sec)      #
 # Open-Source: https://github.com/Hifumi-Sec/universal-ctf #
 ############################################################
@@ -38,3 +38,10 @@ if ! which msfconsole > /dev/null; then
 else
     echo "Metasploit is already installed."
 fi
+
+# Sublist3r installer
+git clone https://github.com/aboul3la/Sublist3r.git
+mv Sublist3r tools/
+cd tools/Sublist3r
+pip install -r requirements.txt
+echo "Successfully installed Sublist3r"
