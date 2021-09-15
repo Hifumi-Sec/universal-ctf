@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ############################################################
-# Universal CTF | v1.0.4                                   #
+# Universal CTF | v1.0.6                                   #
 # Creator: Hifumi Sec (https://github.com/Hifumi-Sec)      #
 # Open-Source: https://github.com/Hifumi-Sec/universal-ctf #
 ############################################################
@@ -45,3 +45,10 @@ mv Sublist3r tools/
 cd tools/Sublist3r
 pip install -r requirements.txt
 echo "Successfully installed Sublist3r"
+
+# AutoRecon installer
+git clone https://github.com/Tib3rius/AutoRecon.git
+mv AutoRecon tools/
+cd tools/AutoRecon
+pip install -r requirements.txt
+echo "Successfully installed AutoRecon"
