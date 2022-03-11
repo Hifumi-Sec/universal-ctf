@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ############################################################
-# Universal CTF | v1.0.6                                   #
-# Creator: Hifumi Sec (https://github.com/Hifumi-Sec)      #
-# Open-Source: https://github.com/Hifumi-Sec/universal-ctf #
+# Universal CTF                                            #
+# Creator: Hifumi1337 (https://github.com/Hifumi1337)      #
+# Open-Source: https://github.com/Hifumi1337/universal-ctf #
 ############################################################
 
 # These are all of the current commands in this tool. If you run this install script, it will check to make sure they're installed.
