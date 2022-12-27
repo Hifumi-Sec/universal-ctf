@@ -15,13 +15,12 @@ banner = '''\033[91m +
                                                 {0}
 '''.format(VERSION)
 
-# UWU
 print("-" * 100)
 print(f'''
 {banner}
 {color_scheme(0,140,255,'[*]')}Universal CTF | {VERSION} {color_scheme(0,140,255,'[*]')}
-{color_scheme(0,140,255,'[$]')}Creator: Hifumi Sec (https://github.com/Hifumi1337)
-{color_scheme(0,140,255,'[$]')}Open-Source: https://github.com/Hifumi1337/universal-ctf
+{color_scheme(0,140,255,'[$]')}Creator: azazelm3dj3d (https://github.com/azazelm3dj3d)
+{color_scheme(0,140,255,'[$]')}Open-Source: https://github.com/azazelm3dj3d/universal-ctf
 ''')
 print("-" * 100)
 

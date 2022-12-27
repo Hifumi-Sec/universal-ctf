@@ -1,20 +1,20 @@
 #!/bin/bash
 
-############################################################
-# Universal CTF                                            #
-# Creator: Hifumi1337 (https://github.com/Hifumi1337)      #
-# Open-Source: https://github.com/Hifumi1337/universal-ctf #
-############################################################
+##############################################################
+# Universal CTF                                              #
+# Creator: azazelm3dj3d (https://github.com/azazelm3dj3d)    #
+# Open-Source: https://github.com/azazelm3dj3d/universal-ctf #
+##############################################################
 
 # These are all of the current commands in this tool. If you run this install script, it will check to make sure they're installed.
 
 # Updates your current packages, so no matter which option is chosen, this makes sure it's a clean install
 sudo apt update
 
-# Installs any required modules for the ctf-helper.py script
+# Installs any required modules for the main script
 pip install -r requirements.txt
 
-# Nmap install
+# Nmap installer
 if ! which nmap > /dev/null; then
     echo -e "Command is not present. Would you like to install it? (y/n) \c"
     read user_reply
@@ -26,7 +26,7 @@ else
     echo "Nmap is already installed."
 fi
 
-# Metasploit install
+# Metasploit installer
 if ! which msfconsole > /dev/null; then
     echo -e "Command is not present. Would you like to install it? (y/n) \c"
     read user_reply
