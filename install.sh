@@ -1,10 +1,10 @@
 #!/bin/bash
 
-##############################################################
-# Universal CTF                                              #
-# Creator: azazelm3dj3d (https://github.com/azazelm3dj3d)    #
-# Open-Source: https://github.com/azazelm3dj3d/universal-ctf #
-##############################################################
+################################################################
+# Universal CTF                                                #
+# Creator: battleoverflow (https://github.com/battleoverflow)  #
+# Open-Source: https://github.com/battleoverflow/universal-ctf #
+################################################################
 
 # These are all of the current commands in this tool. If you run this install script, it will check to make sure they're installed.
 

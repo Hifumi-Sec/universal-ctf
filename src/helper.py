@@ -19,8 +19,8 @@ print("-" * 100)
 print(f'''
 {banner}
 {color_scheme(0,140,255,'[*]')}Universal CTF | {VERSION} {color_scheme(0,140,255,'[*]')}
-{color_scheme(0,140,255,'[$]')}Creator: azazelm3dj3d (https://github.com/azazelm3dj3d)
-{color_scheme(0,140,255,'[$]')}Open-Source: https://github.com/azazelm3dj3d/universal-ctf
+{color_scheme(0,140,255,'[$]')}Creator: battleoverflow (https://github.com/battleoverflow)
+{color_scheme(0,140,255,'[$]')}Open-Source: https://github.com/battleoverflow/universal-ctf
 ''')
 print("-" * 100)
 

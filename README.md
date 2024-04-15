@@ -16,7 +16,7 @@ python3 helper.py
 ## Installation
 An install script has been provided to make sure you have everything installed. All you'll need to do is run the following commands to install everything you need.
 ```bash
-git clone https://github.com/azazelm3dj3d/universal-ctf.git
+git clone https://github.com/battleoverflow/universal-ctf.git
 ```
 
 ```bash
